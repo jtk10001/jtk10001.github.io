@@ -7,30 +7,37 @@ import HorizontalCard from "../components/HorizontalCard.astro";
   <div>
     <div class="text-3xl w-full font-bold mb-5">Selected Patents and Publications</div>
   </div>
-
-  <HorizontalCard
-    title="Cyclic loading of human articular cartilage: the transition from compaction to fatigue"
-    img="/cartilagepaper.jpg"
-    desc="Osteoarthritis damages cartilage, reducing mobility and quality of life. While current treatments manage pain, none truly reverse the condition. Studying the mechanics of healthy cartilage under loads like walking could reveal how fatigue damages it, leading to earlier diagnoses and better interventions before significant degeneration occurs. This study aims to understand this transition from normal function to fatigue damage in healthy human cartilage using various loading conditions."
-    badge="Paper"
-    url="https://www.sciencedirect.com/science/article/abs/pii/S1751616116303484"
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="Chondrocyte viability is lost during high-rate impact loading by transfer of amplified strain, but not stress, to pericellular and cellular regions"
-    img="/indenterpaper.jpg"
-    desc="Traumatic injury damages cartilage, starting a chain reaction leading to osteoarthritis. This study examines how fast vs. slow impacts affect cartilage cells and mechanics, hoping to identify factors minimizing damage and cell death. We used bovine cartilage samples and tracked cell viability and changes in tissue properties after impacts at different speeds. Multi-scale modeling helped visualize stress and strain patterns within the cartilage during impacts."
-    badge="Paper"
-    url="https://www.sciencedirect.com/science/article/pii/S1063458419312002"
-  />
-  <div class="divider my-0"></div>
   <HorizontalCard
     title="Customized configuration for an exoskeleton controller"
     img="/controllerpatent.png"
-    desc="Systems and methods for providing a customized configuration for a controller of an exoskeleton device. A device can receive, via a user interface, feedback from a user indicative of a performance of the user during a movement event."
+    desc="How can a robot you wear use AI to determine the best way of providing torque to make each individual human more efficient? A customized controller based on human inputs helps. I created parts of this controller in C and the user interface for a human to optimize their experience while using an ankle exoskeleton"
     url="https://patentimages.storage.googleapis.com/f3/40/93/cac96fe653013d/US11148279.pdf"
     badge="Patent"
   />
+  <HorizontalCard
+  title="Chondrocyte viability is lost during high-rate impact loading by transfer of amplified strain, but not stress, to pericellular and cellular regions"
+  img="/indenterpaper.jpg"
+  desc="Mechanical damage to cartilage is a likely cause of arthritis. As co-lead author, I simulated loading parameters in models that I created using Python scripting and Finite Element Analysis to understand the impact down to the cellular level of cartilage."
+  badge="Paper"
+  url="https://www.sciencedirect.com/science/article/pii/S1063458419312002"
+/>
+<HorizontalCard
+    title="Cyclic loading of human articular cartilage: the transition from compaction to fatigue"
+    img="/cartilagepaper.jpg"
+    desc="As lead author, I examined the impact of mechanical failure of human cartilage. Developing a robust Matlab data pipeline pipeline, I was able to quickly evaluate many data inputs to run statistics and report mechanical fatigue of human cartilage."
+    badge="Paper"
+    url="https://www.sciencedirect.com/science/article/abs/pii/S1751616116303484"
+  />  
+<HorizontalCard
+    title="Atlas-based algorithm for automatic anatomical measurements in the knee"
+    img="/atlas.png"
+    desc="As an engineer, worked with researchers and doctors to develop machine learning models in Matlab and C++ to ingest CT scans of the knee and provide anatomical measurements typically provided by trained medical professionals"
+    badge="Paper"
+    url="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6582228/"
+  />
+  <div class="divider my-0"></div>
+
+  <div class="divider my-0"></div>
   <!-- <div class="divider my-0"></div>
   <HorizontalCard
     title="Service 4"
