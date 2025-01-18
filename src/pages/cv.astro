@@ -8,10 +8,6 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
     <div class="text-3xl w-full font-bold">CV</div>
   </div>
 
-  <div class="mb-10 text-justify">
- For a more comprehensive resume or CV, please connect and reach out on LinkedIn! 
-  </div>
-
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Experience</div>
   </div>
@@ -77,6 +73,56 @@ import TimeLineElement from "../components/cv/TimeLine.astro";
   <div class="mb-5">
     <div class="text-3xl w-full font-bold">Skills</div>
   </div>
+
+  <div class="mb-5">
+    <div class="text-3xl w-full font-bold">Skills & Expertise</div>
+</div>
+
+<div class="grid md:grid-cols-2 gap-6 mb-10">
+    <div class="skill-category">
+        <h3 class="text-xl font-bold mb-3">Technical</h3>
+        <div class="grid grid-cols-2 gap-2">
+            <div class="skill-item">
+                <span class="font-medium">Python</span>
+                <div class="progress-bar bg-primary h-2 w-4/5 rounded-full"></div>
+            </div>
+            <div class="skill-item">
+                <span class="font-medium">Matlab</span>
+                <div class="progress-bar bg-primary h-2 w-4/5 rounded-full"></div>
+            </div>
+            <!-- More skills -->
+        </div>
+    </div>
+    
+    <div class="skill-category">
+        <h3 class="text-xl font-bold mb-3">Product Management</h3>
+        <div class="grid grid-cols-1 gap-2">
+            <div class="skill-item flex justify-between items-center">
+                <span>Product Strategy</span>
+                <span class="badge badge-primary">8 years</span>
+            </div>
+            <!-- More skills -->
+        </div>
+    </div>
+    
+    <div class="skill-category">
+        <h3 class="text-xl font-bold mb-3">Domain Expertise</h3>
+        <ul class="list-disc list-inside">
+            <li>Autonomous Systems (Drones, Robotics)</li>
+            <li>AI/ML Implementation</li>
+            <li>Aviation Regulations</li>
+        </ul>
+    </div>
+    
+    <div class="skill-category">
+        <h3 class="text-xl font-bold mb-3">Leadership</h3>
+        <div class="flex flex-wrap gap-2">
+            <span class="badge badge-lg">Team Leadership</span>
+            <span class="badge badge-lg">Product Vision</span>
+            <span class="badge badge-lg">Stakeholder Management</span>
+        </div>
+    </div>
+</div>
 
   <ul class="list-disc md:columns-5 columns-2 mx-6">
     <li>Product Management</li>
