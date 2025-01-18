@@ -1,89 +1,183 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
+import createSlug from "../lib/createSlug";
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Jon Kaplan</div>
-    <div class="text-3xl py-3 font-bold">Product Manager and Engineer</div>
-    <div class="py-2">
-      <text class="text-lg">
-       I'm a problem solver with a deep understanding of user experience, robotics, and AI. I navigate complex environments, from launching products in multiple countries to securing millions in funding. Whether it's saving soldiers' lives with exoskeletons or enabling 100 million drone deliveries annually, I'm not afraid to get my hands dirty and lead projects from ideation to implementation.
-<br>
-      </text>
+  <!-- Hero Section -->
+  <div class="container mx-auto px-4 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold mb-4">Jon Kaplan</h1>
+      <div class="text-2xl text-primary mb-6">Product Leader | AI & Robotics Expert | Innovation Driver</div>
+      <p class="text-xl max-w-3xl mx-auto mb-8">
+        Transforming cutting-edge technology into market-ready products at the intersection of AI, robotics, and human-centered design. 
+        Currently leading autonomous drone delivery solutions at Wing (Google).
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="/cv" class="btn btn-primary">View Full CV</a>
+        <a href="https://www.linkedin.com/in/jonathankaplan/" class="btn btn-outline" target="_blank">Connect on LinkedIn</a>
+      </div>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://www.linkedin.com/in/jonathankaplan/" target="_blank"> Let's connect!</a>
+
+    <!-- Achievement Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+          <h2 class="card-title">TIME's Best Inventions 2024</h2>
+          <p>Featured twice for groundbreaking work in drone delivery and exoskeleton technology</p>
+        </div>
+      </div>
+      
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.86-4.22 2.5 2.5 0 0 1 3.9-1.06"/>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.86-4.22 2.5 2.5 0 0 0-3.9-1.06"/>
+          </svg>
+          <h2 class="card-title">AI Innovation</h2>
+          <p>Developed AI systems achieving 99% accuracy in human gait detection</p>
+        </div>
+      </div>
+      
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+            <line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+          <h2 class="card-title">Scale & Impact</h2>
+          <p>Scaled drone delivery operations by 75%, serving thousands of new customers</p>
+        </div>
+      </div>
+      
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          <h2 class="card-title">Technical Excellence</h2>
+          <p>2 Patents & 8 Publications in robotics and biomechanics</p>
+        </div>
+      </div>
     </div>
+
+    <!-- Tech Stack Section -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Technical Expertise</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">Languages</h3>
+          <ul class="list-disc list-inside">
+            <li>Python</li>
+            <li>C</li>
+            <li>MATLAB</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">AI/ML</h3>
+          <ul class="list-disc list-inside">
+            <li>Computer Vision</li>
+            <li>Machine Learning</li>
+            <li>Data Analysis</li>
+            <li>Neural Networks</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">Product</h3>
+          <ul class="list-disc list-inside">
+            <li>Roadmapping</li>
+            <li>User Research</li>
+            <li>Cross Functional Team Leadership</li>
+            <li>Data-Driven Design</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">Robotics</h3>
+          <ul class="list-disc list-inside">
+            <li>Control Systems</li>
+            <li>Sensor Integration</li>
+            <li>Motion Planning</li>
+            <li>System Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Featured Projects -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Featured Work</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="card bg-base-100 shadow-xl">
+          <figure class="px-6 pt-6">
+            <Image
+              src="/Wing Delivery Drone.webp"
+              alt="Wing Delivery Network"
+              width={600}
+              height={400}
+              format="webp"
+              class="rounded-xl h-48 w-full object-cover"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">Wing Delivery Network</h3>
+            <p>Leading product development for autonomous drone delivery systems, enabling safe operations across multiple countries</p>
+            <div class="card-actions justify-end mt-4">
+              <a href="https://wing.com/unmanned-traffic-management/" target="_blank" class="btn btn-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="card bg-base-100 shadow-xl">
+          <figure class="px-6 pt-6">
+            <Image
+              src="/FASTER.jpg"
+              alt="FASTER Exoskeleton"
+              width={600}
+              height={400}
+              format="webp"
+              class="rounded-xl h-48 w-full object-cover"
+            />
+          </figure>
+          <div class="card-body">
+            <h3 class="card-title">FASTER Wearable Robotics</h3>
+            <p>Developed AI-powered exoskeleton systems for military applications, securing $1M+ in funding</p>
+            <div class="card-actions justify-end mt-4">
+              <a href="https://exoskeletonreport.com/product/exoboot/" target="_blank" class="btn btn-primary btn-sm">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest Blog Posts -->
+    {last_posts.length > 0 && 
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">Latest Articles</h2>
+        <div class="space-y-4">
+          {last_posts.map((post) => (
+            <HorizontalCard
+              title={post.data.title}
+              img={post.data.heroImage}
+              desc={post.data.description}
+              url={`/blog/${createSlug(post.data.title, post.slug)}`}
+              target="_self"
+              badge={post.data.badge}
+            />
+          ))}
+        </div>
+      </div>
+    }
   </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {""}</div>
-  </div>
-
-  <HorizontalCard
-    title="Autonomous Drone Detect and Avoid (DAA)"
-    img="/DAA.jpg"
-    desc="How do autonomous delivery drones fly safely in 3D space? We built user interfaces to monitor and provide human backup the drone's ability to autonomous navigate complicated airspace"
-    url="https://www.linkedin.com/pulse/wings-multi-layered-approach-detect-avoid-wing-jziwc/"
-    badge=""
-  />
-  <div class="divider my-0"></div>
-
-  <HorizontalCard
-    title="Wing Uncrewed Traffic Management"
-    img="/Wing Delivery Drone.webp"
-    desc="Wing is a graduate of Google X and a current Alphabet Bet. I lead product development of the OpenSky software suite (OpenSky Pro, Oversight) used internally by Wing Flight Operations to achieve rapid expansion of operations in the US, Australia, and Europe."
-    url="https://wing.com/unmanned-traffic-management/"
-    badge=""
-  />
-  <div class="divider my-0"></div>
-  <HorizontalCard
-    title="FASTER Wearable Robotics Product Line"
-    img="/FASTER.jpg"
-    desc="The FASTER Product line was a novel plug and play set up to rapdily enable military and academic researchers to repeatably conduct research on wearable robotics systems. Powered the Open Source Leg project: https://opensourceleg.com/"
-    
-    url="https://exoskeletonreport.com/product/exoboot/"
-  />
-  <div class="divider my-0"></div>
- <!-- <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
-  /> -->
-
-  <!-- 
-  <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
-  </div>
-
-
-  {
-    last_posts.map((post) => (
-      <>
-        <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
-          target="_self"
-          badge={post.data.badge}
-        />
-        <div class="divider my-0" />
-      </>
-    ))
-  }
-
-  -->
-
 </BaseLayout>
