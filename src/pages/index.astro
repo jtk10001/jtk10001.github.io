@@ -10,18 +10,33 @@ const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <!-- Hero Section -->
-  <div class="container mx-auto px-4 py-12">
-    <div class="text-center mb-12">
-      <h1 class="text-5xl font-bold mb-4">Jon Kaplan</h1>
-      <div class="text-2xl text-primary mb-6">Product Leader | AI & Robotics Expert | Innovation Driver</div>
-      <p class="text-xl max-w-3xl mx-auto mb-8">
-        Transforming cutting-edge technology into market-ready products at the intersection of AI, robotics, and human-centered design. 
-        Currently leading autonomous drone delivery solutions at Wing (Google).
-      </p>
-      <div class="flex justify-center gap-4">
-        <a href="/cv" class="btn btn-primary">View Full CV</a>
-        <a href="https://www.linkedin.com/in/jonathankaplan/" class="btn btn-outline" target="_blank">Connect on LinkedIn</a>
+    <!-- Hero Section -->
+    <div class="container mx-auto px-4 py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold mb-6">Jon Kaplan</h1>
+        
+        <!-- Thesis statement with simpler lines -->
+        <div class="flex items-center justify-center gap-8 my-12">
+          <div class="h-[1px] bg-gray-300 w-12"></div>
+          <p class="text-3xl">Building advanced technology that works for humans</p>
+          <div class="h-[1px] bg-gray-300 w-12"></div>
+        </div>
+
+        <!-- Role/Focus area - made more subtle -->
+        <div class="text-xl text-gray-600 mb-8">
+          Product Leader | Human-Centered AI & Robotics | Autonomous Systems
+        </div>
+
+        <!-- Description -->
+        <p class="text-lg max-w-3xl mx-auto mb-8 text-gray-700">
+          Leading product innovation at Wing (Alphabet's autonomous drone delivery company and Google X graduate) to enable millions of autonomous drone deliveries yearly. Proven track record of transforming complex AI and robotics systems into intuitive products that solve real human needs - from military exoskeletons to large-scale autonomous systems.
+        </p>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4">
+          <a href="/cv" class="btn btn-primary">View Full CV</a>
+          <a href="https://www.linkedin.com/in/jonathankaplan/" class="btn btn-outline" target="_blank">Connect on LinkedIn</a>
+        </div>
       </div>
     </div>
 
@@ -45,7 +60,7 @@ const last_posts = posts.slice(0, 3);
             <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.86-4.22 2.5 2.5 0 0 0-3.9-1.06"/>
           </svg>
           <h2 class="card-title">AI Innovation</h2>
-          <p>Developed AI systems achieving 99% accuracy in human gait detection</p>
+          <p>Developed embedded AI systems achieving 99% accuracy in human gait detection and augmentation</p>
         </div>
       </div>
       
@@ -56,7 +71,7 @@ const last_posts = posts.slice(0, 3);
             <line x1="4" y1="22" x2="4" y2="15"/>
           </svg>
           <h2 class="card-title">Scale & Impact</h2>
-          <p>Scaled drone delivery operations by 75%, serving thousands of new customers</p>
+          <p>Built teleoperations software, enabling drone delivery scale by 75%, serving thousands of new customers</p>
         </div>
       </div>
       
@@ -119,45 +134,47 @@ const last_posts = posts.slice(0, 3);
     <div class="mb-16">
       <h2 class="text-3xl font-bold mb-8 text-center">Featured Work</h2>
       <div class="grid md:grid-cols-2 gap-8">
-        <div class="card bg-base-100 shadow-xl">
-          <figure class="px-6 pt-6">
-            <Image
-              src="/Wing Delivery Drone.webp"
-              alt="Wing Delivery Network"
-              width={600}
-              height={400}
-              format="webp"
-              class="rounded-xl h-48 w-full object-cover"
-            />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">Wing Delivery Network</h3>
-            <p>Leading product development for autonomous drone delivery systems, enabling safe operations across multiple countries</p>
-            <div class="card-actions justify-end mt-4">
-              <a href="https://wing.com/unmanned-traffic-management/" target="_blank" class="btn btn-primary btn-sm">Learn More</a>
+        <a href="https://wing.com/unmanned-traffic-management/" 
+          target="_blank" 
+          class="transition-transform hover:scale-[102%] h-[400px]"> 
+          <div class="card bg-base-100 shadow-xl h-full"> 
+            <figure class="px-6 pt-6">
+              <Image
+                src="/Wing Delivery Drone.webp"
+                alt="Wing Delivery Network"
+                width={600}
+                height={400}
+                format="webp"
+                class="rounded-xl h-48 w-full object-cover"
+              />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">Wing Delivery Network</h3>
+              <p>Leading product development for autonomous drone delivery teleoperations, enabling safe operations across multiple countries as part of Wing's Uncrewed Traffic Management (UTM) team</p>
             </div>
           </div>
-        </div>
+        </a>
 
-        <div class="card bg-base-100 shadow-xl">
-          <figure class="px-6 pt-6">
-            <Image
-              src="/FASTER.jpg"
-              alt="FASTER Exoskeleton"
-              width={600}
-              height={400}
-              format="webp"
-              class="rounded-xl h-48 w-full object-cover"
-            />
-          </figure>
-          <div class="card-body">
-            <h3 class="card-title">FASTER Wearable Robotics</h3>
-            <p>Developed AI-powered exoskeleton systems for military applications, securing $1M+ in funding</p>
-            <div class="card-actions justify-end mt-4">
-              <a href="https://exoskeletonreport.com/product/exoboot/" target="_blank" class="btn btn-primary btn-sm">Learn More</a>
+        <a href="https://web.archive.org/web/20211018235054/https://dephy.com/faster/" 
+          target="_blank" 
+          class="transition-transform hover:scale-[102%] h-[400px]"> 
+          <div class="card bg-base-100 shadow-xl h-full"> 
+            <figure class="px-6 pt-6">
+              <Image
+                src="/FASTER.jpg"
+                alt="FASTER Exoskeleton"
+                width={600}
+                height={400}
+                format="webp"
+                class="rounded-xl h-48 w-full object-cover"
+              />
+            </figure>
+            <div class="card-body">
+              <h3 class="card-title">FASTER Wearable Robotics</h3>
+              <p>Developed AI-powered exoskeleton systems for military and research applications, securing $1M+ in funding</p>
             </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
