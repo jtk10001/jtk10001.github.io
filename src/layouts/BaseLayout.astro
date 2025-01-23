@@ -21,6 +21,29 @@ const {
 <html lang="en" data-theme="modern">
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-X459439EZH"></script>
+    <script>
+      // Declare gtag as a global function
+      declare global {
+        interface Window {
+          dataLayer: any[];
+          gtag: (...args: any[]) => void;
+        }
+      }
+      // Initialize dataLayer
+      window.dataLayer = window.dataLayer || [];
+      
+      // Define gtag function with proper typing
+      function gtag(...args: any[]) {
+        window.dataLayer.push(arguments);
+      }
+      
+      gtag('js', new Date());
+      gtag('config', 'G-X459439EZH');
+    </script>
+
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
