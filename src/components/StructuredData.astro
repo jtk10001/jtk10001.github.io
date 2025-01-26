@@ -1,0 +1,17 @@
+---
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jon Kaplan",
+  "jobTitle": "Product Manager",
+  "alumniOf": "University of Connecticut",
+  "url": "https://jon-kaplan.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/jonathankaplan",
+    "https://github.com/jtk10001",
+    "https://scholar.google.com/citations?user=pjrPcd8AAAAJ"
+  ]
+}
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(personSchema)} />
