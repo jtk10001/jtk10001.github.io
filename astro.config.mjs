@@ -7,7 +7,12 @@ export default defineConfig({
   site: 'https://jon-kaplan.com',
   integrations: [
     mdx(),
-    sitemap(),
+    sitemap({
+      filter: (page) => page !== undefined,
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date().toISOString()
+    }),
     tailwind()
   ],
 });
