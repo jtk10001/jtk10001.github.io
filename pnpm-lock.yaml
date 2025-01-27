@@ -39,6 +39,9 @@ importers:
       '@tailwindcss/typography':
         specifier: ^0.5.10
         version: 0.5.16(tailwindcss@3.4.17)
+      '@types/sax':
+        specifier: ^1.2.7
+        version: 1.2.7
 
 packages:
 
