@@ -7,6 +7,8 @@ on:
 # Set permissions
 permissions:
   contents: read
+  # Add artifacts permission
+  actions: read
 
 jobs:
   build:
@@ -14,8 +16,29 @@ jobs:
     steps:
       - name: Checkout your repository using git
         uses: actions/checkout@v4
-      - name: Install and build
-        uses: withastro/action@v1
+      
+      # Add caching for faster builds
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: latest
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 18
-          package-manager: pnpm@latest
+          cache: 'pnpm'
+          
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # Use the Astro build command directly instead of the action
+      - name: Build
+        run: pnpm run build
+        
+      # Optional: Upload build output as artifact using v4
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: dist/
