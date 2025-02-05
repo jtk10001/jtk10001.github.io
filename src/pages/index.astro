@@ -4,209 +4,156 @@ import { Image } from "astro:assets";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug";
+import FeaturedWork from "../components/FeaturedWork.astro"; // Add this line
+
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-    <!-- Enhanced Hero Section with Animation -->
+    <!-- Hero Section -->
     <div class="container mx-auto px-4 py-12">
-      <div class="text-center mb-12 animate-fadeIn">
-        <h1 class="text-6xl font-bold mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-          Jon Kaplan
-        </h1>
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold mb-6">Jon Kaplan</h1>
         
-        <!-- Enhanced value proposition -->
-        <div class="flex items-center justify-center gap-8 my-8">
-          <div class="h-[2px] bg-primary w-16"></div>
-          <p class="text-3xl font-semibold">Transforming Complex Technology into Human Solutions</p>
-          <div class="h-[2px] bg-primary w-16"></div>
+        <!-- Thesis statement with simpler lines -->
+        <div class="flex items-center justify-center gap-8 my-12">
+          <div class="h-[1px] bg-gray-300 w-12"></div>
+          <p class="text-3xl">Building advanced technology that works for humans</p>
+          <div class="h-[1px] bg-gray-300 w-12"></div>
         </div>
 
-        <!-- Refined role presentation -->
-        <div class="flex flex-wrap justify-center gap-4 text-lg mb-8">
-          <span class="badge badge-lg">Product Leadership</span>
-          <span class="badge badge-lg">AI & Robotics</span>
-          <span class="badge badge-lg">Autonomous Systems</span>
+        <!-- Role/Focus area - made more subtle -->
+        <div class="text-xl text-gray-600 mb-8">
+          Product Leader | Human-Centered AI & Robotics | Autonomous Systems
         </div>
 
-        <!-- Punchy description with better readability -->
-        <p class="text-lg max-w-2xl mx-auto mb-10 leading-relaxed">
-          Currently leading autonomous systems at Wing (Alphabet) enabling millions of drone deliveries. 
-          Previously transformed military exoskeletons and complex robotics into intuitive, human-centered products.
+        <!-- Description -->
+        <p class="text-lg max-w-3xl mx-auto mb-8 text-gray-700">
+          Leading product innovation at Wing (Alphabet's autonomous drone delivery company and Google X graduate) to enable millions of autonomous drone deliveries yearly. Proven track record of transforming complex AI and robotics systems into intuitive products that solve real human needs - from military exoskeletons to large-scale autonomous systems.
         </p>
 
-        <!-- Enhanced CTA section -->
-        <div class="flex justify-center gap-6">
-          <a href="/cv" class="btn btn-primary btn-lg hover:scale-105 transition-transform">
-            View Full CV
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="https://www.linkedin.com/in/jonathankaplan/" class="btn btn-outline btn-lg group hover:scale-105 transition-transform" target="_blank">
-            Connect on LinkedIn
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-              <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" />
-              <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" />
-            </svg>
-          </a>
+        <!-- Buttons -->
+        <div class="flex justify-center gap-4">
+          <a href="/cv" class="btn btn-primary">View Full CV</a>
+          <a href="https://www.linkedin.com/in/jonathankaplan/" class="btn btn-outline" target="_blank">Connect on LinkedIn</a>
         </div>
       </div>
     </div>
 
-    
-
-    <!-- Enhanced Featured Projects Section -->
-    <div class="mb-16 px-4">
-      <h2 class="text-3xl font-bold mb-8 text-center">
-        Featured Work
-        <div class="w-24 h-1 bg-primary mx-auto mt-2 mb-6"></div>
-      </h2>
-      <div class="grid md:grid-cols-2 gap-8">
-        <a href="https://wing.com/unmanned-traffic-management/" 
-          target="_blank" 
-          class="group"> 
-          <div class="card bg-base-100 shadow-xl h-full hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2"> 
-            <figure class="px-6 pt-6 overflow-hidden">
-              <Image
-                src="/Wing Delivery Drone.webp"
-                alt="Wing Delivery Network"
-                width={600}
-                height={400}
-                format="webp"
-                class="rounded-xl h-48 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-              />
-            </figure>
-            <div class="card-body">
-              <h3 class="card-title text-xl group-hover:text-primary transition-colors">Wing Delivery Network</h3>
-              <p class="text-base-content/80">Leading product development for autonomous drone delivery teleoperations, enabling safe operations across multiple countries</p>
-              <div class="card-actions justify-end mt-4">
-                <span class="badge badge-outline">Autonomous Systems</span>
-                <span class="badge badge-outline">AI</span>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a href="https://web.archive.org/web/20211018235054/https://dephy.com/faster/" 
-          target="_blank" 
-          class="group"> 
-          <div class="card bg-base-100 shadow-xl h-full hover:shadow-2xl transition-all duration-300 group-hover:-translate-y-2"> 
-            <figure class="px-6 pt-6 overflow-hidden">
-              <Image
-                src="/FASTER.jpg"
-                alt="FASTER Exoskeleton"
-                width={600}
-                height={400}
-                format="webp"
-                class="rounded-xl h-48 w-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-              />
-            </figure>
-            <div class="card-body">
-              <h3 class="card-title text-xl group-hover:text-primary transition-colors">FASTER Wearable Robotics</h3>
-              <p class="text-base-content/80">Developed AI-powered exoskeleton systems for military and research applications, securing $1M+ in funding</p>
-              <div class="card-actions justify-end mt-4">
-                <span class="badge badge-outline">Robotics</span>
-                <span class="badge badge-outline">Machine Learning</span>
-              </div>
-            </div>
-          </div>
-        </a>
+    <!-- Achievement Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="8" r="6"/>
+            <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+          </svg>
+          <h2 class="card-title">TIME's Best Inventions 2024</h2>
+          <p>Featured twice for groundbreaking work in drone delivery and exoskeleton technology</p>
+        </div>
       </div>
-    </div>
-
-    <!-- Core Skills Section -->
-    <div class="mb-20 px-4">
-      <h2 class="text-3xl font-bold mb-12 text-center">
-        Core Competencies
-        <div class="w-24 h-1 bg-primary mx-auto mt-2 mb-6"></div>
-      </h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="card bg-base-100 shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title mb-4">Product Development</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Product Strategy & Roadmapping
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                User Research & Testing
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Cross-functional Leadership
-              </li>
-            </ul>
-          </div>
+      
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.86-4.22 2.5 2.5 0 0 1 3.9-1.06"/>
+            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.86-4.22 2.5 2.5 0 0 0-3.9-1.06"/>
+          </svg>
+          <h2 class="card-title">AI Innovation</h2>
+          <p>Developed embedded AI systems achieving 99% accuracy in human gait detection and augmentation</p>
         </div>
-
-        <div class="card bg-base-100 shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title mb-4">Technical Expertise</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                AI & Machine Learning
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Robotics & Control Systems
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Python, C, MATLAB, SQL
-              </li>
-            </ul>
-          </div>
+      </div>
+      
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+            <line x1="4" y1="22" x2="4" y2="15"/>
+          </svg>
+          <h2 class="card-title">Scale & Impact</h2>
+          <p>Built teleoperations software, enabling drone delivery scale by 75%, serving thousands of new customers</p>
         </div>
-
-        <div class="card bg-base-100 shadow-lg">
-          <div class="card-body">
-            <h3 class="card-title mb-4">Domain Knowledge</h3>
-            <ul class="space-y-2">
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Autonomous Systems
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Human-Robot Interaction
-              </li>
-              <li class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
-                Biomechanics & Engineering
-              </li>
-            </ul>
-          </div>
+      </div>
+      
+      <div class="card bg-base-100 shadow-xl">
+        <div class="card-body items-center text-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-primary mb-2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="16 18 22 12 16 6"/>
+            <polyline points="8 6 2 12 8 18"/>
+          </svg>
+          <h2 class="card-title">Technical Excellence</h2>
+          <p>2 Patents & 8 Publications in robotics and biomechanics</p>
         </div>
       </div>
     </div>
 
-    <!-- Enhanced Blog Section -->
+    <!-- Tech Stack Section -->
+    <div class="mb-16">
+      <h2 class="text-3xl font-bold mb-8 text-center">Technical Expertise</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">Languages</h3>
+          <ul class="list-disc list-inside">
+            <li>Python</li>
+            <li>C</li>
+            <li>MATLAB</li>
+            <li>SQL</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">AI/ML</h3>
+          <ul class="list-disc list-inside">
+            <li>Computer Vision</li>
+            <li>Machine Learning</li>
+            <li>Data Analysis</li>
+            <li>Neural Networks</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">Product</h3>
+          <ul class="list-disc list-inside">
+            <li>Roadmapping</li>
+            <li>User Research</li>
+            <li>Cross Functional Team Leadership</li>
+            <li>Data-Driven Design</li>
+          </ul>
+        </div>
+        <div class="p-4 bg-base-100 rounded-lg shadow-md">
+          <h3 class="font-bold mb-2">Robotics</h3>
+          <ul class="list-disc list-inside">
+            <li>Control Systems</li>
+            <li>Sensor Integration</li>
+            <li>Motion Planning</li>
+            <li>System Design</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+   <!-- Featured Projects -->
+<div class="mb-16">
+  <FeaturedWork client:load />
+</div>
+
+    <!-- Latest Blog Posts -->
     {last_posts.length > 0 && 
-      <div class="mb-20 px-4">
-        <h2 class="text-3xl font-bold mb-12 text-center">
-          Latest Insights
-          <div class="w-24 h-1 bg-primary mx-auto mt-4"></div>
-        </h2>
-        <div class="space-y-6">
+      <div class="mb-16">
+        <h2 class="text-3xl font-bold mb-8 text-center">Latest Articles</h2>
+        <div class="space-y-4">
           {last_posts.map((post) => (
-            <div class="hover:translate-x-2 transition-transform">
-              <HorizontalCard
-                title={post.data.title}
-                img={post.data.heroImage}
-                desc={post.data.description}
-                url={`/blog/${createSlug(post.data.title, post.slug)}`}
-                target="_self"
-                badge={post.data.badge}
-              />
-            </div>
+            <HorizontalCard
+              title={post.data.title}
+              img={post.data.heroImage}
+              desc={post.data.description}
+              url={`/blog/${createSlug(post.data.title, post.slug)}`}
+              target="_self"
+              badge={post.data.badge}
+            />
           ))}
         </div>
       </div>
     }
+  </div>
 </BaseLayout>

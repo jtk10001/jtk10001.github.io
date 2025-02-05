@@ -1,0 +1,141 @@
+.
+├── LICENSE
+├── README.md
+├── astro.config.mjs
+├── dist
+│   ├── 404.html
+│   ├── AlphabetExo.png
+│   ├── CNAME
+│   ├── DAA.jpg
+│   ├── DNS.jpg
+│   ├── FASTER.jpg
+│   ├── Media
+│   │   └── index.html
+│   ├── Wing Delivery Drone.webp
+│   ├── WingTime.webp
+│   ├── _astro
+│   │   ├── Media.DQSGYUHZ.css
+│   │   └── hoisted.CflXz_lF.js
+│   ├── army-exoboot.jpg
+│   ├── atlas.png
+│   ├── blog
+│   │   ├── index.html
+│   │   ├── tag
+│   │   │   └── Product
+│   │   │       └── index.html
+│   │   └── two-spots-on-times-best-inventions-of-2024
+│   │       └── index.html
+│   ├── cartilagepaper.jpg
+│   ├── controllerpatent.png
+│   ├── cv
+│   │   └── index.html
+│   ├── favicon.webp
+│   ├── indenterpaper.jpg
+│   ├── index.html
+│   ├── itemPreview.webp
+│   ├── jonathan-kaplan-resume.pdf
+│   ├── keywordsStrategy.json
+│   ├── leg.jpg
+│   ├── pax.jpg
+│   ├── post_img.webp
+│   ├── profile.webp
+│   ├── projects
+│   │   └── index.html
+│   ├── publications
+│   │   └── index.html
+│   ├── sitemap-0.xml
+│   ├── sitemap-index.xml
+│   ├── smart.jpg
+│   ├── social_img.webp
+│   ├── store
+│   │   ├── index.html
+│   │   ├── item1
+│   │   │   └── index.html
+│   │   ├── item2
+│   │   │   └── index.html
+│   │   └── item3
+│   │       └── index.html
+│   └── time.webp
+├── package-lock.json
+├── package.json
+├── pnpm-lock.yaml
+├── public
+│   ├── AlphabetExo.png
+│   ├── CNAME
+│   ├── DAA.jpg
+│   ├── DNS.jpg
+│   ├── FASTER.jpg
+│   ├── Wing Delivery Drone.webp
+│   ├── WingTime.webp
+│   ├── army-exoboot.jpg
+│   ├── atlas.png
+│   ├── cartilagepaper.jpg
+│   ├── controllerpatent.png
+│   ├── favicon.webp
+│   ├── indenterpaper.jpg
+│   ├── itemPreview.webp
+│   ├── jonathan-kaplan-resume.pdf
+│   ├── keywordsStrategy.json
+│   ├── leg.jpg
+│   ├── pax.jpg
+│   ├── post_img.webp
+│   ├── profile.webp
+│   ├── smart.jpg
+│   ├── social_img.webp
+│   └── time.webp
+├── src
+│   ├── components
+│   │   ├── BaseHead.astro
+│   │   ├── Card.astro
+│   │   ├── Footer.astro
+│   │   ├── Header.astro
+│   │   ├── HorizontalCard.astro
+│   │   ├── HorizontalShopItem.astro
+│   │   ├── SideBar.astro
+│   │   ├── SideBarFooter.astro
+│   │   ├── SideBarMenu.astro
+│   │   ├── StructuredData.astro
+│   │   ├── canonical.astro
+│   │   └── cv
+│   │       └── TimeLine.astro
+│   ├── config.ts
+│   ├── content
+│   │   ├── blog
+│   │   │   └── post1.md
+│   │   ├── config.ts
+│   │   └── store
+│   │       ├── item1.md
+│   │       ├── item2.md
+│   │       └── item3.md
+│   ├── env.d.ts
+│   ├── layouts
+│   │   ├── BaseLayout.astro
+│   │   ├── PostLayout.astro
+│   │   └── StoreItemLayout.astro
+│   ├── lib
+│   │   └── createSlug.ts
+│   ├── pages
+│   │   ├── 404.astro
+│   │   ├── Media.astro
+│   │   ├── blog
+│   │   │   ├── [...page].astro
+│   │   │   ├── [slug].astro
+│   │   │   └── tag
+│   │   │       └── [tag]
+│   │   │           └── [...page].astro
+│   │   ├── cv.astro
+│   │   ├── index.astro
+│   │   ├── projects.astro
+│   │   ├── publications.astro
+│   │   ├── robots.txt.ts
+│   │   ├── rss.xml.js
+│   │   └── store
+│   │       ├── [...page].astro
+│   │       └── [slug].astro
+│   └── styles
+│       └── global.css
+├── structure.txt
+├── tailwind.config.cjs
+└── tsconfig.json
+
+30 directories, 109 files
