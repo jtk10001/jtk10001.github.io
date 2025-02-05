@@ -35,9 +35,28 @@ const last_posts = posts.slice(0, 3);
         </p>
 
         <!-- Buttons -->
-        <div class="flex justify-center gap-4">
-          <a href="/cv" class="btn btn-primary">View Full CV</a>
-          <a href="https://www.linkedin.com/in/jonathankaplan/" class="btn btn-outline" target="_blank">Connect on LinkedIn</a>
+        <div class="flex justify-center gap-6">
+          <a 
+            href="/jonathan-kaplan-resume.pdf" 
+            class="btn btn-primary group hover:scale-105 transition-transform duration-200 flex items-center gap-2"
+            download
+          >
+            <span>Download Resume</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 group-hover:translate-y-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 17V3m0 14l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 0 0 4.561 21h14.878a2 2 0 0 0 1.94-1.515L22 17"/>
+            </svg>
+          </a>
+          <a 
+            href="https://www.linkedin.com/in/jonathankaplan/" 
+            class="btn btn-outline hover:bg-[#0077B5] hover:border-[#0077B5] hover:text-white transition-colors duration-200 flex items-center gap-2"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span>Let's Connect</span>
+            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+          </a>
         </div>
       </div>
     </div>
